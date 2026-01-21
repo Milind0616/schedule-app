@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 const authRoutes = require('./routes/auth');
+const serviceRoutes = require('./routes/services');
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -12,6 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
+app.use('/api/services', serviceRoutes);
 
 async function start() {
   try {
