@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calendar, Clock, Users, CheckCircle, Star, Zap, Shield, ArrowRight } from "lucide-react";
@@ -14,12 +13,12 @@ const Index = () => {
             <span className="text-xl font-bold">ScheduleBook</span>
           </div>
           <div className="flex items-center space-x-4">
-            <Link to="/auth">
-              <Button variant="ghost">Sign In</Button>
-            </Link>
-            <Link to="/auth">
-              <Button>Get Started</Button>
-            </Link>
+            <Button asChild variant="ghost">
+              <a href="#features">Explore Features</a>
+            </Button>
+            <Button asChild>
+              <a href="#get-started">Get Started</a>
+            </Button>
           </div>
         </div>
       </nav>
@@ -35,23 +34,21 @@ const Index = () => {
             Save time, stay organized, and never miss an appointment again.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/auth">
-              <Button size="lg" className="text-lg px-8 py-6">
+            <Button asChild size="lg" className="text-lg px-8 py-6">
+              <a href="#get-started">
                 Book an Appointment
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
-            <Link to="/auth">
-              <Button size="lg" variant="outline" className="text-lg px-8 py-6">
-                Become a Provider
-              </Button>
-            </Link>
+              </a>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6">
+              <a href="#how-it-works">Become a Provider</a>
+            </Button>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="container mx-auto px-4 py-20">
+      <section id="features" className="container mx-auto px-4 py-20">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose ScheduleBook?</h2>
           <p className="text-lg text-muted-foreground">Everything you need to manage appointments efficiently</p>
@@ -121,7 +118,7 @@ const Index = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="bg-blue-50 dark:bg-gray-800 py-20">
+      <section id="how-it-works" className="bg-blue-50 dark:bg-gray-800 py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">How It Works</h2>
@@ -163,19 +160,17 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="container mx-auto px-4 py-20">
+      <section id="get-started" className="container mx-auto px-4 py-20">
         <Card className="bg-gradient-to-r from-blue-600 to-purple-600 text-white border-none">
           <CardContent className="p-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Get Started?</h2>
             <p className="text-lg mb-8 opacity-90">
               Join thousands of users who trust ScheduleBook for their appointment needs
             </p>
-            <Link to="/auth">
-              <Button size="lg" variant="secondary" className="text-lg px-8 py-6">
-                Start Booking Now
-                <Zap className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
+            <Button size="lg" variant="secondary" className="text-lg px-8 py-6">
+              Start Booking Now
+              <Zap className="ml-2 h-5 w-5" />
+            </Button>
           </CardContent>
         </Card>
       </section>
